@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html onclick="isKeyPressed(event)">
+<head>
+	<meta charset="utf-8">
+	<title>Resumo dos comandos GIT</title>
+	<script src="../../script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="site">
+		<div class="container">
+			<h1>Download do GIT</h1>
+			<div class="content">
+				<a href="https://git-scm.com/downloads">Página de download do GIT</a><br>
+				<p>Para testar se a instalação foi realizada com sucesso, basta abrir o cmd e usar o comando:</p>
+				<code>
+					git --version
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>Iniciando repositório do GIT</h1>
+			<div class="content">
+				<p>Repositório do GIT é o mesmo que a pasta do projeto, para iniciar o repositório basta abrir o cmd na pasta do projeto e usar o comando:</p>
+				<code>
+					cd c:/pasta/do/projeto<br>
+					git init
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>README.md</h1>
+			<div class="content">
+				<p>Arquivo explicando o objetivo do projeto, assim como observações e instruções gerais do projeto. Padronizado o nome README.md e sempre fica na raiz do projeto ou repositório</p>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>git status</h1>
+			<div class="content">
+				<p>Comando usado para consultar o status do monitoramento ou "track" do GIT. Aqui são mostrados os arquivos que estão sendo monitorados (em verde) e os que não estão (em vermelho)</p>
+				<code>
+					git status
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>git add</h1>
+			<div class="content">
+				<p>Comando usado para adicionar arquivos ao monitoramento ou "track" do GIT<br>
+				Use o comando abaixo para adicionar arquivos individualmente:</p>
+				<code>
+					git add &lt;nome_do_arquivo&gt;
+				</code>
+				<p>ou<br>
+				Use o comando abaixo para adicionar todos os arquivos de uma única vez:</p>
+				<code>
+					git add -A
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>git commit</h1>
+			<div class="content">
+				<p>Comando para "salvar" as alterações do arquivo em determinada versão do seu projeto.</p>
+				<p>Comando abaixo serve para executar a ação de commit</p>
+				<code>
+					git commit -m "Breve resumo das alterações realizadas entre o último commit e esse atual"
+				</code>
+
+				<p>Comando abaixo serve para executar a ação de commit, mais a adição dos arquivos que não estavam sendo monitorados. É o mesmo que usar o "git add -A" e depois o "git commit -m 'descrição'"</p>
+				<code>
+					git commit -am "Breve resumo das alterações realizadas entre o último commit e esse atual"
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>branchs</h1>
+			<div class="content">
+				<p>Branchs são como versões "braços"/"galhos" do projeto... branchs diferentes podem ser criados para determinada versão do projeto, ou para auxiliar no processo de diferentes equipes atuando em diferentes etapas do projeto. Ex: uma equipe trabalha no branch de produção do projeto, ou seja, na corrigindo eventuais falhas na versão que está em uso atualmente. Enquanto outra equipe atual num branch de melhorias para a versão futura do sistema.</p>
+				<p>Comando para ver quais branchs existem no repositório</p>
+				<code>
+					git branch
+				</code>
+				<p>Comando para criar um novo branch</p>
+				<code>
+					git branch nome_do_branch
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>checkout</h1>
+			<div class="content">
+				<p>Comando usado para alternar entre branchs.</p>
+				<p>Exemplo abaixo leva o projeto para o branch 1.1: </p>
+				<code>
+					git branch 1.1
+				</code>
+
+				<p>Já esse, eva o projeto para o branch master: </p>
+				<code>
+					git branch master
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>git log</h1>
+			<div class="content">
+				
+				<p>Comando usado para visualizar o log de todos os commits realizados naquele branch</p>
+				<code>git log</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>reset</h1>
+			<div class="content">
+				<p>Comando usado para retornar o branch à determinado ponto (commit)</p>
+				<p>Há algumas opções diferentes de reset:</p>
+				<p><strong>--soft:</strong> é realizado o reset no commit, mas as alterações dos arquivos e os commits ainda estarão disponíveis para que você consiga recupar essas alterações se necessários</p>
+				<p><strong>--mixed:</strong> é realizado o reset no commit, as alterações dos arquivos são mantidas, mas o commit não, ou seja, os arqivos deverão ser adicionados novamente para depois ser realizad o commit</p>
+				<p><strong>--hard:</strong> é realizado o reset no commit e nos arquivos, as alterações são completamente descartadas, sendo perdido qualquer informação dessas alterações.</p><br>
+				<p>Para usar o comando, é necessário ter o id/hash do commit, esse id é obtido com o "git log", pode ser usado o comando com os 7 primeiros dígitos do hash, ou com o hash inteiro. Abaixo o exemplo do comando:</p>
+				<code>
+					git reset --soft fbc701a064b7e393905db5881cfd4549b93b537d
+				</code>
+				<code>
+					git reset --hard fbc701a
+				</code>
+			</div>
+		</div>
+		<hr>
+		<div class="container">
+			<h1>diff</h1>
+			<div class="content">
+				<p>Comando usado para visualizar a diferença entre o último commit e o estado atual do projeto. O commando mostra arquivo por arquivo e linha por linha o que foi excluído e o que foi criado no projeto.</p>
+
+				<code>
+					git diff
+				</code>
+
+				<br>
+				<p>Para exibir somente o nome dos arquivos que foram alterados</p>
+				<code>
+					git diff --name-only
+				</code>
+
+				<br>
+				<p>Para exibir somente as alterações de um unico arquivo</p>
+				<code>
+					git diff nome_do_arquivo
+				</code>
+
+				<br>
+				<p>Para restaurar/excluir as alterações de um único arquivo. Exemplo: você verificou as diferenças de todos os arquivos com o "git diff" e descobriu que somente um arquivo deve ser ignorado, ou seja, somente um arquivo deve permanecer sem as alterações os demais serão commitados normalmente:</p>
+				<code>
+					git checkout HEAD -- nome_do_arquivo_que_sera_restaurado
+				</code>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

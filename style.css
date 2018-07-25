@@ -1,0 +1,47 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+.site{
+	width: 800px;
+	margin: auto;
+	padding-right: 100px;
+	padding-left: 100px;
+}
+
+hr{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h1{
+	text-align: center;
+}
+
+body{
+	font-family: Calibri;
+}
+
+code{
+	font-family: Consolas;
+	font-size: 12px;
+	display: block;
+	background-color: #eeeeee;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	padding: 2px;
+	margin: 5px;
+}
+
+.content{
+	display: none;
+}
+
+.container:hover h1{
+	color: darkblue;
+}
+
+.container:hover .content{
+	display: block;
+}
