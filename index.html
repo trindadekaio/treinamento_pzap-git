@@ -167,6 +167,73 @@
 
 			</div>
 		</div>
+
+		<hr>
+		<div class="container">
+			<h1>git remote</h1>
+			<div class="content">
+				<p>Comando usado para vincular o repositório local com um remoto</p>
+				<code>
+					git remote add nome_repositorio link_do_repositorio_remoto<br>
+					git remote add origin https://github.com/trindadekaio/treinamento_pzap-git
+				</code>
+				<br>
+				<p>Nesse caso é necessário ter uma SSH Key configurada no computador. Ver os links de passo-a-passo disponíveis no painel do curso</p>
+				<p>O "nome_repositorio" do comando, é o nome de um branch que será criado no repositório local. Esse branch será usado quando for realizado o processo de enviar o repositório para o remoto (push) ou o processo de puxar o repositório remoto para o local (fetch). Normalmente esse nome é "origin" mas pode ser definido como quiser</p>
+				<br><br>
+				<p>Para verificar os repositórios remotos configurados</p>
+				<code>
+					git remote
+				</code>
+				<br>
+				<p>Para ver o endereço e ações disponíveis para cada repositório remoto</p>
+				<code>
+					git remote -v
+				</code>
+			</div>
+		</div>
+
+		<hr>
+		<div class="container">
+			<h1>git push</h1>
+			<div class="content">
+				<p>Comando usado para enviar o repositório local para o remoto</p>
+				<br>
+				<p>Necessário realizar o add e commit antes de realizar esse processo.</p>
+				<code>
+					git push -u origin master
+				</code>
+				<br>
+				<p>Sempre considerar o repositório destino (origin) e depois o origem (master ou qualquer outro repositório que será usado)</p>
+			</div>
+		</div>
+
+		<hr>
+		<div class="container">
+			<h1>git fetch</h1>
+			<div class="content">
+				<p>Comando usado para puxar o repositório remoto para o local</p>
+				<br>
+				<p>Necessário realizar o vinculo do repositorio remoto antes, ver o comando "git remote"</p>
+				<code>
+					git fetch nome_repositorio
+				</code>
+				<br>
+				<p>Esse "nome_repositorio" é o mesmo que foi definido quando foi criado o vínculo via "sgit remote"</p>
+			</div>
+		</div>
+
+		<hr>
+		<div class="container">
+			<h1>.gitigore</h1>
+			<div class="content">
+				<p>Arquivo que deve ficar na raiz do repositório contendo os arquivos ou tipos de arquivos que devem ser ignorados pelo Git. Cada linha do arquivo, contem o nome do arquivo ou algum padrão de arquivo a ser ignorado. Exemplo de conteudo do arquivo:</p>
+				<code>
+					*.sql
+					*.txt
+				</code>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
